@@ -1,0 +1,106 @@
+{% load static %}
+{% static '' as baseURL %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	
+	<title>CAP</title>
+	
+	<link rel="stylesheet" type="text/css" href="{% static 'cap_homepage.css' %}">
+	<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<script>
+		function displayDate(){
+			var x = new Date();
+			var z = x.getFullYear();
+			document.getElementById("year").innerHTML = "Copyright All Rights Reserved " + z;
+		}
+	  
+		function load(){
+			alert("Page is loaded successfully");
+		}
+    </script>
+
+</head>
+
+<body onload="load(), displayDate()">
+<!-- Tab links -->
+<div class="head">
+	<div class="logoText">
+		<img class="logo" src="{% static 'logo.jpg' %}">
+		<h1>CAP</h1>
+	</div>
+
+	<div class="sign">
+		<p><a href="cap_login.html">LOGIN</a> | <a href="cap_signup_form.html">SIGN UP</a></p>
+	</div>
+	
+	<div class="tab">
+		<ul>
+			<li><a href="cap_homepage.html">Home</a></li>
+			<li><a href="cap_xml.xml">Genre</a></li>
+			<li><a href="cap_celebrity.html">Celeb</a></li>
+			<li><a href="cap_year.html">Years</a></li>
+			<input type="text" placeholder="Search CAP...">
+		</ul>
+		
+	</div>
+</div>
+
+<br>
+
+<div class="recentlyAdded">
+
+	<h3> Recently Added</h3>
+	<div class="images">
+		<div class="imgs">
+
+		{% for movie in movies %}
+			<div class="img_section">
+				<img src="{{baseURL}}/{{movie.img}}"> 
+				<p>{{movie.name}}</p>
+				<p>{{movie.release_date}}</p>
+			</div>
+		{% endfor %}
+
+		</div>
+	</div>
+	<br><br>
+	
+	<h3> Top Rated</h3>
+	<div class="images">
+		<div class="imgs">
+			<img src="{% static 'img7.jpeg' %}">
+			<img src="{% static 'img8.jpeg' %}">
+			<img src="{% static 'img9.jpeg' %}">
+			<img src="{% static 'img10.jpeg' %}">
+			<img src="{% static 'img11.jpeg' %}">
+			<img src="{% static 'img12.jpeg' %}">
+		</div>
+	</div>
+	<br><br><br>
+</div>
+
+<div class="Bottom">
+	<div class="footer">
+		<footer>
+			<p>
+				<a href="cap_aboutUs.html">About Us</a>  |   
+				<a href="cap_contactus.html">Contact Us</a>  |   
+				<a href="cap_feedback.html">Feedback</a>
+			</p>
+		</footer>
+	</div>
+</div>
+
+<p style="color: white; text-align: center;"><span id="year"></span></p>
+
+</body>
+</html>
+
