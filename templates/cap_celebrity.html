@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<html lang="en">
+	<title>CAP</title>
+	
+	<link rel="stylesheet" type="text/css" href="celeb.css">
+	<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<script>
+		function displayDate(){
+			var x = new Date();
+			var z = x.getFullYear();
+			document.getElementById("year").innerHTML = "Copyright All Rights Reserved " + z;
+		}
+	  
+		function load(){
+			alert("Page is loaded successfully");
+		}
+    </script>
+
+</head>
+
+<body>
+	<div class="head">
+	<div class="logoText">
+		<img class="logo" src="logo.jpg"></img>
+		<h1>CAP</h1>
+	</div>
+
+	<div class="sign">
+		<p><a href="cap_login.html">LOGIN</a> | <a href="cap_signup_form.html">SIGN UP</a></p>
+	</div>
+	
+	<div class="tab">
+		<ul>
+			<li><a href="cap_homepage.html">Home</a></li>
+			<li><a href="cap_xml.xml">Genre</a></li>
+			<li><a href="cap_celebrity.html">Celeb</a></li>
+			<li><a href="cap_year.html">Years</a></li>
+			<input type="text" placeholder="Search CAP...">
+		</ul>
+		
+	</div>
+</div>
+
+    <h1 align="center">
+      Your Favourite Celebrities:
+    </h1>
+
+    <div ng-app="myApp" ng-controller="celebCtrl" align="center"> 
+
+      <input class="celebArea" type="text" ng-model="addNew"/>
+      <button class="button" ng-click="addNewCeleb()">Add</button>
+      <p id="error">{{errortext}}</p>
+		<div class="celebArea">
+        <table>
+          <tr ng-repeat="x in list">
+            <td>{{ x }}</td>
+          </tr>
+        </table>
+        </div>
+    </div>
+    <script src="celeb.js"></script>
+	
+    <div class="Bottom">
+		<div class="footer">
+			<footer><p><a href="cap_aboutUs.html">About Us</a>  |   <a href="cap_contactUs.html">Contact Us</a>  |   <a href="cap_feedback.html">Feedback</a></p></footer>
+		</div>
+	</div>
+</body>
+</html>

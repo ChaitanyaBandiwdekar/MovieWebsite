@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Feedback</title>
+	
+	<link rel="stylesheet" type="text/css" href="cap_feedback_css.css">
+	<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
+	
+	<script>
+		function thanks() {
+			var sentence=['Thank you', 'for', 'your', 'valuable', 'feedback!'];
+			var text=sentence.join(' ');
+			document.getElementById("thanks").innerHTML = text;
+		}
+	
+	</script>
+</head>
+
+<body>
+
+	<div class="head">
+		<div class="logoText">
+			<img class="logo" src="logo.jpg"></img>
+			<h1>CAP</h1>
+		</div>
+		
+		<div class="sign">
+			<p><a href="cap_login.html">LOGIN</a> | <a href="cap_signup_form.html">SIGN UP</a></p>
+		</div>
+		
+		<div class="tab">
+			<ul>
+			  <li><a href="cap_homepage.html">Home</a></li>
+			  <li><a href="cap_xml.xml">Genre</a></li>
+			  <li><a href="cap_celebrity.html">Celeb</a></li>
+			  <li><a href="cap_year.html">Year</a></li>
+			  <input type="text" placeholder="Search CAP...">
+			</ul>
+		</div>
+	</div>
+
+<br>
+<h2>FEEDBACK</h2>
+<form>
+<div class="feedback">
+	<div class="details">
+		<label for="name">Name:</label> <br> <input type="text" name="name" placeholder="Please enter full name"><br> <br>
+		<label for="email">Email:</label> <br> <input type="email" id="email" placeholder="For eg: abc@xyz.mnp"><br><br>
+		<textarea id="subject" name="subject" placeholder="Tell us your experience of the website..." style="height:75px"></textarea><br><br>
+		<label for="rate">Rate (between 0 and 10):</label>
+		<input type="range" id="rate" name="rate" min="0" max="10"><br>
+	</div>
+	<hr>
+	<br>
+	<div class="rate">
+		<h5>Is this your first visit to the website?<h5>
+		<input type="radio" name="number">
+		<label for="number">Yes</label>
+		<input type="radio" name="number">
+		<label for="number">No</label><br><br>
+		
+		<h5>Were you able to find the information you were looking for?<h5>
+		<input type="radio" name="info">
+		<label for="info">Yes</label>
+		<input type="radio" name="info">
+		<label for="info">No</label>
+		<input type="radio" name="info">
+		<label for="info">Partially</label><br><br>
+		
+		<h5>How did you hear about us?<h5>
+		<select name="hear">Select<option>Via friend </option><option>Instagram/FB/Other social media </option><option>Google </option><option>Others</option></select><br><br>
+		
+		<h5>Rate your overall experience?<h5>
+		<input type="radio" name="experience">
+		<label>😍</label>
+		<input type="radio" name="experience">
+		<label>😀</label>
+		<input type="radio" name="experience">
+		<label>🙁</label>
+		<input type="radio" name="experience">
+		<label>😡</label>
+		<br>
+	</div>
+	<br>
+	<button type="button" onclick="thanks()">Submit</button>
+</div>
+</form>
+<br>
+<p style="color: white; text-align: center;"><span id="thanks"></span></p>
+<br><br><br>
+
+<div class="Bottom">
+	<div class="footer">
+	<footer><p><a href="cap_aboutUs.html">About Us</a>  |   <a href="cap_contactUs.html">Contact Us</a>  |   <a href="cap_feedback.html">Feedback</a></p></footer>
+	</div>
+</div>
+
+
+</body>
+</html>

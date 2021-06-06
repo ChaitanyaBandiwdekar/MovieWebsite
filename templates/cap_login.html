@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+	<title>
+		Login!
+	</title>
+	
+	<script src="cap_login.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="cap_login_css.css">
+	<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<div class="head">
+		<div class="logoText">
+			<img class="logo" src="logo.jpg"></img>
+			<h1>CAP</h1>
+		</div>
+		
+		<div class="sign">
+			<p id="sign"><a href="cap_login.html">LOGIN</a> | <a href="cap_signup_form.html">SIGN UP</a></p>
+		</div>
+		
+		<div class="tab">
+			<ul>
+			  <li><a href="cap_homepage.html">Home</a></li>
+			  <li><a href="cap_xml.xml">Genre</a></li>
+			  <li><a href="cap_celebrity.html">Celeb</a></li>
+			  <li><a href="cap_year.html">Year</a></li>
+			  <input type="text" placeholder="Search CAP...">
+			</ul>
+		</div>
+	</div>
+
+	<div class="heading">
+		<h1> Login </h1> 
+	</div>
+
+	<div class="form">
+		<form align="left" name="myForm" onsubmit="return validateForm()">
+			<div class="dumb">
+				<label for="name">Username:</label> <br> <input type="text" placeholder="eg: ItachiUchiha@42069" id="name" required> <br> <br>
+			</div>
+			
+			<label for="pass"> Password: </label> <br>
+			<div class="dumb">
+			<input type="password" id="pass" placeholder="Password must contain atleast one numeric value and one special character">
+			</div>		
+			<br> <br>
+			
+			<button type="submit" onclick="login()">Login</button>
+			
+		</form>
+	</div>
+
+
+<br><br><br>
+
+<div class="Bottom">
+	<div class="footer">
+	<footer><p><a href="cap_aboutUs.html">About Us</a>  |   <a href="cap_contactUs.html">Contact Us</a>  |   <a href="cap_feedback.html">Feedback</a></p></footer>
+	</div>
+</div>
+
+</body>
+</html>

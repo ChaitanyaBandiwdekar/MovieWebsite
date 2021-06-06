@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" type="text/css" href="cap_contactus.css">
+    <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+</head>
+<body>
+    <div class="head">
+	<div class="logoText">
+		<img class="logo" src="logo.jpg"></img>
+		<h1>CAP</h1>
+	</div>
+
+	<div class="sign">
+		<p><a href="cap_login.html">LOGIN</a> | <a href="cap_signup_form.html">SIGN UP</a></p>
+	</div>
+	
+	<div class="tab">
+		<ul>
+			<li><a href="cap_homepage.html">Home</a></li>
+			<li><a href="cap_xml.xml">Genre</a></li>
+			<li><a href="cap_celebrity.html">Celeb</a></li>
+			<li><a href="cap_year.html">Years</a></li>
+			<input type="text" placeholder="Search CAP...">
+		</ul>
+		
+	</div>
+</div>
+        <h1 style="text-align:center;">Contact Us</h1>
+
+        <div id="form" ></div>
+
+        <script type="text/babel">
+            class MyForm extends React.Component {
+                constructor(props) {
+                    super(props);
+                    this.state = {
+                        name: '',
+                        email: '',
+                    };
+                }
+				
+                mySubmitHandler = (event) => {
+                    event.preventDefault();
+                    alert("You are submitting as " + this.state.email);
+                }
+				
+                myChangeHandler = (event) => {
+                    let name = event.target.name;
+                    let val = event.target.value;
+                    this.setState({[name]: val});
+                }
+				
+                render() {
+                    const mystyle = {
+                        margin: "auto",
+                        borderColor: "white",
+                        border: "2px solid white",
+                        width: "20%",
+                        padding:"2%",
+                        textAlign:"center"
+                    };
+
+                    const input = {
+						
+                        borderRadius: "10px",
+                        margin: "2%", 
+                        padding: "5px",
+                        border: "1px solid",
+                        borderColor: "#4a92f8"
+                    };
+
+                    const button = {
+                        backgroundColor: "#4a92f8", 
+                        border: "2px solid orange",
+                        color: "black",
+                        width: "75%",
+                        padding: "5px",
+                        textAlign: "center",
+                        fontSize: "15px",
+                        fontFamily: "Comfortaa"
+                    };
+					
+                    return (
+						<form onSubmit={this.mySubmitHandler} style={mystyle}>
+						<h2>Details of: {this.state.name}</h2>
+						<input type="text" name="name" onChange={this.myChangeHandler} placeholder="Enter full name" style={input}/>
+						<input type="email" name="email" placeholder="xyz@abc" onChange={this.myChangeHandler} style={input}/>
+						<input type="textarea" placeholder="What do you want to tell us!" style={input}/><br/><br/>
+						<input type="submit" value="Submit" style={button}/>
+						</form>
+                    );
+                }
+            }
+
+                ReactDOM.render(<MyForm />, document.getElementById('form'));
+        </script>
+
+        <div class="Bottom">
+			<div class="footer">
+				<footer><p><a href="cap_aboutUs.html">About Us</a>  |   <a href="cap_contactus.html">Contact Us</a>  |   <a href="cap_feedback.html">Feedback</a></p></footer>
+			</div>
+		</div>
+</body>
+</html>

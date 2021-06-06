@@ -63,7 +63,7 @@
 
 		{% for movie in movies %}
 			<div class="img_section">
-				<img src="{{baseURL}}/{{movie.img}}"> 
+				<img src="{{movie.img.url}}"> 
 				<p>{{movie.name}}</p>
 				<p>{{movie.release_date}}</p>
 			</div>
