@@ -1,3 +1,6 @@
+{% load static %}
+{% static '' as baseURL %}
+
 <!DOCTYPE HTML>
 
 <html>
@@ -8,7 +11,7 @@
 	
 	<script src="cap_signup.js"></script>
 	
-	<link rel="stylesheet" type="text/css" href="cap_signup_form_css.css">
+	<link rel="stylesheet" type="text/css" href="{% static 'cap_signup_form_css.css' %}">
 	<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
 </head>
 
@@ -16,19 +19,19 @@
 
 	<div class="head">
 		<div class="logoText">
-			<img class="logo" src="logo.jpg"></img>
+			<img class="logo" src="{% static 'logo.jpg' %}">
 			<h1>CAP</h1>
 		</div>
 		
 		<div class="sign">
-			<p><a href="cap_login.html">LOGIN</a> | <a href="cap_signup_form.html">SIGN UP</a></p>
+			<p><a href="../login">LOGIN</a> | <a href="../signup">SIGN UP</a></p>
 		</div>
 		
 		<div class="tab">
 			<ul>
-			  <li><a href="cap_homepage.html">Home</a></li>
+			  <li><a href="../">Home</a></li>
 			  <li><a href="cap_xml.xml">Genre</a></li>
-			  <li><a href="cap_celebrity.html">Celeb</a></li>
+			  <li><a href="../celeb">Celeb</a></li>
 			  <li><a href="cap_year.html">Year</a></li>
 			  <input type="text" placeholder="Search CAP...">
 			</ul>
@@ -41,7 +44,7 @@
 </div>
 
 <div class="form">
-	<form align="left" name="myForm" onsubmit="return validateForm()">
+	<form name="myForm" onsubmit="return validateForm()">
 		<div class="dumb">
 			<label for="name">Username:</label> <br> <input type="text" placeholder="eg: ItachiUchiha@42069" id="name" required> <br> <br>
 			

@@ -9,7 +9,41 @@ body {
   margin: 0px;
 }
 
-/************** HEADER ***************/
+.celebArea {
+  width: 25%;
+  background-color: #4a92f8;
+  border: 2px solid #3300cc;
+  border-radius: 10px;
+}
+
+button {
+  font-family: Comfortaa;
+  border: 2px solid orange;
+  width: 10%;
+  height: 25px;
+  color: white;
+  background-color: blue;
+  border-radius: 8px;
+  margin-left: 25%;
+  transition: background-color 0.35s;
+}
+
+button:hover {
+  background-color: orange;
+}
+
+#error {
+  width: 25%;
+  color: white;
+}
+
+.celebArea input[type="text"] {
+  padding: 5%;
+  margin: 2% 0px 0px 0px;
+  border: 2px solid orange;
+  font-size: 15px;
+  height: 80%;
+}
 
 .tab {
   margin-top: 0px;
@@ -20,6 +54,7 @@ body {
 
 ul {
   width: 100%;
+
   display: grid;
   grid-template-columns: 20% 20% 20% 20% 15%;
   grid-gap: 1px;
@@ -107,8 +142,6 @@ h1 {
   text-shadow: 1px 1px 2px #3300cc;
 }
 
-/************** MAIN BODY ***************/
-
 h3 {
   padding-top: 5px;
   margin-left: 5px;
@@ -146,14 +179,6 @@ h3 {
   padding: 8px 0 4px 0;
 }
 
-.img_section p{
-  color: white;
-  margin-top: 0;
-  text-align: center;
-}
-
-/************** FOOTER ***************/
-
 .footer {
   background-color: #000028;
   width: 25.5%;
@@ -166,18 +191,22 @@ h3 {
   padding: 10px;
 }
 
-.footer a {
+.footer a:link {
   color: white;
   text-decoration: none;
   text-transform: uppercase;
   transition: color 0.35s;
 }
-
+.footer a:visited {
+  color: white;
+}
 .footer a:hover {
   color: orange;
 }
 
-/************** MEDIA QUERIES ***************/
+.bottom {
+  color: #282828;
+}
 
 @media (max-width: 900px) {
   .imgs {

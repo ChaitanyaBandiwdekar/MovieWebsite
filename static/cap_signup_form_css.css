@@ -1,0 +1,299 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+	background-image: url("homepage.jpg");/*linear-gradient(black, #000028, #000055);*/
+	background-size: cover;
+	font-family: Comfortaa;
+	margin: 0px;
+}
+
+
+.tab{
+	margin-top: 0px;
+	background-color: #000028;
+	height: 5%;
+	padding: 0.1%;
+}
+
+ul{
+	width: 100%;
+	
+	display: grid;
+	grid-template-columns: 20% 20% 20% 20% 15%;
+	grid-gap: 1px;
+}
+
+ul li
+{
+	width: 85%;
+	margin-left: 1%;
+	padding: 3% 0px 0px 29%;
+	color: white;
+	font-size: 1.6vw;
+	border: 3px;
+	border-style: solid;
+	background-color: #282828;
+	border-radius: 25px;
+	border-color: #4a92f8;
+	transition: background-color 0.35s, border-color 0.35s;
+	display: inline;
+}
+
+
+.tab input[type=text]{
+	float: right;
+	padding: 5%;
+	margin: 2% 0px 0px 0px;
+	border: 2px solid orange;
+	font-size: 15px;
+	height: 80%;
+}
+
+
+.logo{
+	float: left;
+	height: 60px; 
+	width: 70px;
+	object-fit: scale-down;
+}
+
+
+.sign{
+	background-color: #000028;
+	width: 15%;
+	margin-left: 83.5%;
+	border-radius: 20px;
+}
+
+.sign a{
+	text-decoration: none;
+	color: #4a92f8;
+	transition: color 0.25s, text-shadow 0.25s;
+}
+
+.sign p{
+	padding: 10px 5px 10px 10px;
+	width: 100%;
+	font-size: 1.5vw;
+	color: #4a92f8;
+}
+
+.sign a:hover{
+	color: orange; /*#3300cc;*/
+	text-shadow: 1px 1px 2px #000085;
+}
+
+
+.tab li:hover{
+	background-color:#4a92f8;
+	border-color: #3300cc;
+}
+
+.tab li:hover a{
+	color: #3300cc;
+	font-weight: bold;
+}
+
+.tab a:link {
+	color: white;
+    text-decoration: none;
+}
+
+.tab a:visited {color: white}
+
+
+
+h1{
+	padding-top: 13px;
+	color: #4a92f8;
+	margin-top: 0px;
+	text-shadow: 1px 1px 2px #3300cc;
+}
+
+
+.form{
+	margin : auto;
+	background-color: #282828;
+	width: 25%;
+	
+	color: white;
+	padding-top: 15px;
+	padding-left: 15px;
+	padding-bottom: 15px;
+	border: 2px solid white;
+	border-radius: 0px 0px 10px 10px;
+	font-size: 15px;
+}
+
+.heading{
+	margin : auto;
+	margin-top: 3%;
+	background-color: #3300cc;
+	color: #4a92f8;
+	width: 25%;
+	padding-left: 100px;
+	border: 2px solid white;
+	border-radius: 10px 10px 0px 0px;
+}
+
+
+.dumb input{
+	border-radius: 10px;
+	width: 75%;
+	height: 25px;
+}
+
+.checkbox{
+	font-size: 12px;
+}
+
+button{
+	font-family: Comfortaa;
+	border: 2px solid orange;
+	width: 25%;
+	height: 30px;
+	color: white;
+	background-color: blue;
+	transition: background-color 0.35s;
+	border-radius: 8px;
+	margin-left: 35%;
+}
+
+button:hover{
+	background-color: orange;
+}
+
+
+
+
+
+.footer{
+	background-color: #000028;
+	width: 25.5%;
+	border-radius: 20px;
+	margin-left: 0.5%;
+}
+
+.footer p	
+{
+	color: white;
+	padding: 10px;
+}
+
+.footer a:link
+{
+	color: white;
+    text-decoration: none;
+	text-transform: uppercase;
+	transition: color 0.35s;
+}
+.footer a:visited{color: white;}
+.footer a:hover{color: orange;}
+
+.bottom{
+	color: #282828;
+}
+
+
+
+
+@media (max-width: 900px) {
+	
+	ul{
+		grid-template-columns: 45% 45%;
+		grid-gap: 10px;
+	}
+	
+	ul li{
+		width: 85%;
+		margin-left: 10%;
+		padding: 2% 0px 2% 33%;
+		color: white;
+		font-size: 2.25vw;
+		border: 3px;
+		border-style: solid;
+		background-color: #282828;
+		border-radius: 25px;
+		border-color: #4a92f8;
+		transition: background-color 0.35s, border-color 0.35s;
+		display: inline;
+	}
+	
+	input[type=text]{
+		float: right;
+		padding: 2%;
+		margin: 2% 0px 0px 23%;
+		border: 2px solid orange;
+		font-size: 15px;
+		height: 80%;
+		width: 60%;
+	}
+	
+	.sign{
+		background-color: #000028;
+		width: 17.5%;
+		margin-left: 82%;
+		border-radius: 20px;
+	}
+	
+	.sign p{
+		padding: 10px 5px 10px 10px;
+		width: 100%;
+		font-size: 1.7vw;
+		color: #4a92f8;
+	}
+	
+	
+
+}
+
+
+@media (max-width: 600px) {
+
+	ul{
+		grid-template-columns: 80%;
+		grid-gap: 10px;
+	}
+	
+	ul li{
+		width: 85%;
+		margin-left: 15%;
+		padding: 2% 0px 2% 35%;
+		color: white;
+		font-size: 3vw;
+		border: 3px;
+		border-style: solid;
+		background-color: #282828;
+		border-radius: 25px;
+		border-color: #4a92f8;
+		transition: background-color 0.35s, border-color 0.35s;
+		display: inline;
+	}
+	
+	input[type=text]{
+		float: right;
+		padding: 2%;
+		margin: 2% 0px 0px 28%;
+		border: 2px solid orange;
+		font-size: 15px;
+		height: 80%;
+		width: 60%;
+	}
+	
+	.sign{
+		background-color: #000028;
+		width: 26%;
+		margin-left: 72%;
+		border-radius: 20px;
+	}
+	
+	.sign p{
+		padding: 10px 5px 10px 10px;
+		width: 100%;
+		font-size: 2.5vw;
+		color: #4a92f8;
+	}
+}
+

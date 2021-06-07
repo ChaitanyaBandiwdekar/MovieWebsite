@@ -1,10 +1,13 @@
+{% load static %}
+{% static '' as baseURL %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<html lang="en">
 	<title>CAP</title>
 	
-	<link rel="stylesheet" type="text/css" href="celeb.css">
+	<link rel="stylesheet" type="text/css" href="{% static 'celeb.css' %}">
 	<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
@@ -29,19 +32,19 @@
 <body>
 	<div class="head">
 	<div class="logoText">
-		<img class="logo" src="logo.jpg"></img>
+		<img class="logo" src="{% static 'logo.jpg' %}">
 		<h1>CAP</h1>
 	</div>
 
 	<div class="sign">
-		<p><a href="cap_login.html">LOGIN</a> | <a href="cap_signup_form.html">SIGN UP</a></p>
+		<p><a href="../login">LOGIN</a> | <a href="../signup">SIGN UP</a></p>
 	</div>
 	
 	<div class="tab">
 		<ul>
-			<li><a href="cap_homepage.html">Home</a></li>
+			<li><a href="../">Home</a></li>
 			<li><a href="cap_xml.xml">Genre</a></li>
-			<li><a href="cap_celebrity.html">Celeb</a></li>
+			<li><a href="../celeb">Celeb</a></li>
 			<li><a href="cap_year.html">Years</a></li>
 			<input type="text" placeholder="Search CAP...">
 		</ul>

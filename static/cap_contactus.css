@@ -3,13 +3,11 @@
 }
 
 body {
-  background-image: url("homepage.jpg");
+  background-image: url("homepage.jpg"); /*linear-gradient(black, #000028, #000055);*/
   background-size: cover;
   font-family: Comfortaa;
   margin: 0px;
 }
-
-/************** HEADER ***************/
 
 .tab {
   margin-top: 0px;
@@ -41,9 +39,24 @@ ul li {
 }
 
 input[type="text"] {
-  float: right;
   padding: 5%;
-  margin: 2% 0px 0px 0px;
+  margin: 2%;
+  border: 2px solid orange;
+  font-size: 15px;
+  height: 80%;
+}
+
+input[type="email"] {
+  padding: 5%;
+  margin: 2%;
+  border: 2px solid orange;
+  font-size: 15px;
+  height: 80%;
+}
+
+input[type="textarea"] {
+  padding: 5%;
+  margin: 2%;
   border: 2px solid orange;
   font-size: 15px;
   height: 80%;
@@ -107,7 +120,9 @@ h1 {
   text-shadow: 1px 1px 2px #3300cc;
 }
 
-/************** MAIN BODY ***************/
+h2 {
+  color: white;
+}
 
 h3 {
   padding-top: 5px;
@@ -146,14 +161,6 @@ h3 {
   padding: 8px 0 4px 0;
 }
 
-.img_section p{
-  color: white;
-  margin-top: 0;
-  text-align: center;
-}
-
-/************** FOOTER ***************/
-
 .footer {
   background-color: #000028;
   width: 25.5%;
@@ -166,18 +173,22 @@ h3 {
   padding: 10px;
 }
 
-.footer a {
+.footer a:link {
   color: white;
   text-decoration: none;
   text-transform: uppercase;
   transition: color 0.35s;
 }
-
+.footer a:visited {
+  color: white;
+}
 .footer a:hover {
   color: orange;
 }
 
-/************** MEDIA QUERIES ***************/
+.bottom {
+  color: #282828;
+}
 
 @media (max-width: 900px) {
   .imgs {

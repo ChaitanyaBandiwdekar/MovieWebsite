@@ -3,13 +3,11 @@
 }
 
 body {
-  background-image: url("homepage.jpg");
+  background-image: url("homepage.jpg"); /*linear-gradient(black, #000028, #000055);*/
   background-size: cover;
   font-family: Comfortaa;
   margin: 0px;
 }
-
-/************** HEADER ***************/
 
 .tab {
   margin-top: 0px;
@@ -40,7 +38,7 @@ ul li {
   display: inline;
 }
 
-input[type="text"] {
+.tab input[type="text"] {
   float: right;
   padding: 5%;
   margin: 2% 0px 0px 0px;
@@ -107,52 +105,82 @@ h1 {
   text-shadow: 1px 1px 2px #3300cc;
 }
 
-/************** MAIN BODY ***************/
-
-h3 {
-  padding-top: 5px;
-  margin-left: 5px;
+h2 {
+  margin-left: 44%;
+  padding-top: 13px;
   color: #4a92f8;
+  margin-top: 0px;
   text-shadow: 1px 1px 2px #3300cc;
 }
 
-.recentlyAdded img {
+.details {
+  font-size: 15px;
+  margin: 15px;
+}
+
+textarea {
   width: 95%;
-  height: 250px;
-  margin: 3px;
-  margin-bottom: 10px;
-  border: 1px;
-  border-style: solid;
-  border-color: white;
+  margin-top: 0px;
+  border: 2px solid #4a92f8;
   border-radius: 10px;
 }
 
-.recentlyAdded img:hover {
-  transition: transform 0.25s;
-  transform: scale(1.05);
-  border: 3px solid orange;
+.feedback {
+  border: 2px solid white;
+  margin: auto;
+  width: 40%;
+  border-radius: 20px;
+  padding: 15px;
 }
 
-.imgs {
-  display: grid;
-  grid-template-columns: auto auto auto auto auto auto;
-  grid-gap: 1px;
-
-  position: relative;
-  background-color: #000028;
-  height: 20%;
-  border-top: 1px white;
-  border-bottom: 1px white;
-  padding: 8px 0 4px 0;
+.details input {
+  border: 2px solid white;
+  color: black;
+  width: 95%;
+  border-radius: 10px;
+  height: 25px;
 }
 
-.img_section p{
+button {
+  font-family: Comfortaa;
+  border: 2px solid orange;
+  width: 25%;
+  height: 30px;
   color: white;
-  margin-top: 0;
-  text-align: center;
+  background-color: blue;
+  transition: background-color 0.35s;
+  border-radius: 8px;
+  margin-left: 36%;
 }
 
-/************** FOOTER ***************/
+button:hover {
+  background-color: orange;
+}
+
+select {
+  font-size: 15px;
+  border: 2px solid #4a92f8;
+  color: #4a92f8;
+  border-radius: 20px;
+}
+
+label {
+  font-size: 15px;
+  color: white;
+}
+
+.rate {
+  font-size: 20px;
+  margin: 0px;
+  margin-left: 15px;
+}
+
+h5 {
+  font-size: 15px;
+  color: white;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
 
 .footer {
   background-color: #000028;
@@ -164,26 +192,28 @@ h3 {
 .footer p {
   color: white;
   padding: 10px;
+  width: 100%;
+  font-size: 1.15vw;
 }
 
-.footer a {
+.footer a:link {
   color: white;
   text-decoration: none;
   text-transform: uppercase;
   transition: color 0.35s;
 }
-
+.footer a:visited {
+  color: white;
+}
 .footer a:hover {
   color: orange;
 }
 
-/************** MEDIA QUERIES ***************/
+.bottom {
+  color: #282828;
+}
 
 @media (max-width: 900px) {
-  .imgs {
-    grid-template-columns: auto auto auto;
-  }
-
   ul {
     grid-template-columns: 45% 45%;
     grid-gap: 10px;
@@ -227,13 +257,18 @@ h3 {
     font-size: 1.7vw;
     color: #4a92f8;
   }
+
+  .footer {
+    width: 40%;
+  }
+
+  .footer p {
+    width: 100%;
+    font-size: 1.8vw;
+  }
 }
 
 @media (max-width: 600px) {
-  .imgs {
-    grid-template-columns: auto auto;
-  }
-
   ul {
     grid-template-columns: 80%;
     grid-gap: 10px;
@@ -276,5 +311,14 @@ h3 {
     width: 100%;
     font-size: 2.5vw;
     color: #4a92f8;
+  }
+
+  .footer {
+    width: 55%;
+  }
+
+  .footer p {
+    width: 100%;
+    font-size: 2.25vw;
   }
 }
