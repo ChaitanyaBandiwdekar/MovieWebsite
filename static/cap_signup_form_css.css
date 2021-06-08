@@ -165,6 +165,11 @@ button:hover{
 	background-color: orange;
 }
 
+.error p{
+	color: red;
+}
+
+
 
 
 

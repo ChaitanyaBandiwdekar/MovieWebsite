@@ -9,8 +9,6 @@
 		Login!
 	</title>
 	
-	<script src="cap_login.js"></script>
-	
 	<link rel="stylesheet" type="text/css" href="{% static 'cap_login_css.css' %}">
 	<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
 </head>
@@ -28,9 +26,9 @@
 		
 		<div class="tab">
 			<ul>
-			  <li><a href="../">Home</a></li>
+			  <li><a href="../../">Home</a></li>
 			  <li><a href="cap_xml.xml">Genre</a></li>
-			  <li><a href="../celeb">Celeb</a></li>
+			  <li><a href="../../celeb">Celeb</a></li>
 			  <li><a href="cap_year.html">Year</a></li>
 			  <input type="text" placeholder="Search CAP...">
 			</ul>
@@ -42,20 +40,26 @@
 	</div>
 
 	<div class="form">
-		<form align="left" name="myForm" onsubmit="return validateForm()">
+		<form name="myForm" action="../login/" method="POST">
+			{% csrf_token %}
+
 			<div class="dumb">
-				<label for="name">Username:</label> <br> <input type="text" placeholder="eg: ItachiUchiha@42069" id="name" required> <br> <br>
+				<label for="name">Username:</label> <br> <input type="text" name="u_name" placeholder="eg: ItachiUchiha@42069" id="u_name" required> <br> <br>
 			</div>
 			
-			<label for="pass"> Password: </label> <br>
+			<label for="pass1"> Password: </label> <br>
 			<div class="dumb">
-			<input type="password" id="pass" placeholder="Password must contain atleast one numeric value and one special character">
+			<input type="password" id="pass1" name="pass1" placeholder="Password must contain atleast one numeric value and one special character" required>
 			</div>		
 			<br> <br>
 			
-			<button type="submit" onclick="login()">Login</button>
+			<button type="submit">Login</button>
 			
 		</form>
+
+		{% for message in messages %}
+			<div class="error"> <p> {{message}} </p> </div>
+		{% endfor %}
 	</div>
 
 

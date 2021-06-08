@@ -38,7 +38,12 @@
 	</div>
 
 	<div class="sign">
-		<p><a href="/login">LOGIN</a> | <a href="/signup">SIGN UP</a></p>
+		{% if user.is_authenticated %}
+		<p>Hello {{user.first_name}}!</p>
+		<p><a href="/accounts/logout">LOGOUT</a></p>
+		{% else %}
+		<p><a href="/accounts/login">LOGIN</a> | <a href="/accounts/signup">SIGN UP</a></p>
+		{% endif %}
 	</div>
 	
 	<div class="tab">

@@ -8,9 +8,3 @@ def home(request):
 
 def celeb(request):
     return render(request, 'cap_celebrity.html')
-
-def login(request):
-    return render(request, 'cap_login.html')
-
-def signup(request):
-    return render(request, 'cap_signup_form.html')

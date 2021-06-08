@@ -9,8 +9,6 @@
 		Sign up!
 	</title>
 	
-	<script src="cap_signup.js"></script>
-	
 	<link rel="stylesheet" type="text/css" href="{% static 'cap_signup_form_css.css' %}">
 	<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
 </head>
@@ -29,9 +27,9 @@
 		
 		<div class="tab">
 			<ul>
-			  <li><a href="../">Home</a></li>
+			  <li><a href="../../">Home</a></li>
 			  <li><a href="cap_xml.xml">Genre</a></li>
-			  <li><a href="../celeb">Celeb</a></li>
+			  <li><a href="../../celeb">Celeb</a></li>
 			  <li><a href="cap_year.html">Year</a></li>
 			  <input type="text" placeholder="Search CAP...">
 			</ul>
@@ -44,24 +42,49 @@
 </div>
 
 <div class="form">
-	<form name="myForm" onsubmit="return validateForm()">
-		<div class="dumb">
-			<label for="name">Username:</label> <br> <input type="text" placeholder="eg: ItachiUchiha@42069" id="name" required> <br> <br>
-			
-			<label for="email"> E-Mail ID: </label> <br> <input type="email" id="email" placeholder="eg: VillageOrTheClan@gmail.com"> <br> <br>
-			
-			<label for="dob">DOB:</label> <br> <input type="date" id="dob"> <br> <br>
-		</div>
+	<form action="../signup/" name="myForm" method="POST">
+		{% csrf_token %}
 		
-		<label>Gender: </label> <br>
-			<input type="radio" id="male" name="gender" value="male"> <label for="male">Male</label> <br>
-			<input type="radio" id="female" name="gender" value="female"> <label for="female">Female</label> <br>
-			<input type="radio" id="other" name="gender" value="other"> <label for="other">Other</label> <br> <br>
+		<div class="dumb">
+			<label for="name">Username:</label> <br> 
+			<input type="text" placeholder="eg: ItachiUchiha@42069" id="name" name="u_name" required> 
+			{% for message in messages %}
+				{% ifequal message.tags 'u_name info' %}
+					<div class="error"> <p> {{message}} </p></div>
+				{% endifequal %}
+			{% endfor %}
+			<br> <br>
+			
+			<label for="f_name">First name:</label> <br> 
+			<input type="text" id="first_name" name="f_name" required> <br> <br>
+
+			<label for="l_name">Last name:</label> <br> 
+			<input type="text" id="last_name" name="l_name" required> <br> <br>
+			
+			<label for="email"> E-Mail ID: </label> <br> <input type="email" name="email" id="email" placeholder="eg: VillageOrTheClan@gmail.com">
+			{% for message in messages %}
+				{% ifequal message.tags 'email info' %}
+					<div class="error"> <p> {{message}} </p> </div>
+				{% endifequal %}
+			{% endfor %}
+			<br> <br>
+		</div>
 		
 		<label for="pass"> Password: </label> <br>
 		<div class="dumb">
-		<input type="password" id="pass" placeholder="Password must contain atleast one numeric value and one special character">
+		<input type="password" id="pass1" name="pass1" placeholder="Password must contain atleast one numeric value and one special character" required>
 		</div>		
+		<br>
+
+		<label for="pass">Confirm Password: </label> <br>
+		<div class="dumb">
+		<input type="password" name="pass2" id="pass2" required>
+		</div>
+		{% for message in messages %}
+			{% ifequal message.tags 'pass info' %}
+				<div class="error"> <p> {{message}} </p> </div>
+			{% endifequal %}
+		{% endfor %}		
 		<br> <br>
 		
 		<div class="checkbox">
